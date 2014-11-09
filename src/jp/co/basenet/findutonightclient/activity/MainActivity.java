@@ -1,0 +1,91 @@
+package jp.co.basenet.findutonightclient.activity;
+
+import jp.co.basenet.findutonightclient.R;
+import jp.co.basenet.findutonightclient.fragment.ChatTagFragment;
+import jp.co.basenet.findutonightclient.fragment.HistoryTagFragment;
+import jp.co.basenet.findutonightclient.fragment.HomeTagFragment;
+import jp.co.basenet.findutonightclient.fragment.SettingTagFragment;
+import jp.co.basenet.findutonightclient.listener.TabListener;
+
+import android.app.ActionBar;
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+
+public class MainActivity extends Activity {
+	//ブロードキャスト通信用
+	private BroadcastReceiver rec = null;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        //ActionBar取得
+        final ActionBar actionBar = getActionBar();
+        //ActionBarのタイトルを変更
+        actionBar.setTitle("お店を探す");
+        
+        //ActionBarをナビゲーションモードに設定
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        
+        //四つのTabのlistenerを設定
+        actionBar.addTab(actionBar.newTab()
+        		.setText("Home")
+        		.setTabListener(new TabListener<HomeTagFragment>(this,
+        					"home", HomeTagFragment.class)));
+        
+        actionBar.addTab(actionBar.newTab()
+        		.setText("Chat")
+        		.setTabListener(new TabListener<ChatTagFragment>(this,
+        					"chat", ChatTagFragment.class)));
+        
+        actionBar.addTab(actionBar.newTab()
+        		.setText("His")
+        		.setTabListener(new TabListener<HistoryTagFragment>(this,
+        					"his", HistoryTagFragment.class)));
+        
+        
+        actionBar.addTab(actionBar.newTab()
+        		.setText("Set")
+        		.setTabListener(new TabListener<SettingTagFragment>(this,
+        					"set", SettingTagFragment.class)));
+        
+        //Serviceをここで設定(socket通信用)
+        this.rec = new BroadcastReceiver(){
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				// TODO Auto-generated method stub
+				
+			}
+        };
+        
+        //Service<->ＵＩ間の通信
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("SEND");
+        MainActivity.this.registerReceiver(this.rec, filter);
+        
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        return super.onOptionsItemSelected(item);
+    }
+}
