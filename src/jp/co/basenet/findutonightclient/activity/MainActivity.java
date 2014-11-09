@@ -1,6 +1,7 @@
 package jp.co.basenet.findutonightclient.activity;
 
 import jp.co.basenet.findutonightclient.R;
+import jp.co.basenet.findutonightclient.Service.SocketService;
 import jp.co.basenet.findutonightclient.fragment.ChatTagFragment;
 import jp.co.basenet.findutonightclient.fragment.HistoryTagFragment;
 import jp.co.basenet.findutonightclient.fragment.HomeTagFragment;
@@ -16,6 +17,9 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -62,15 +66,18 @@ public class MainActivity extends Activity {
 			@Override
 			public void onReceive(Context context, Intent intent) {
 				// TODO Auto-generated method stub
-				
+				Toast.makeText(MainActivity.this, intent.getStringExtra("back"), Toast.LENGTH_SHORT).show();
 			}
         };
         
-        //Service<->ÇtÇhä‘ÇÃí êM
         IntentFilter filter = new IntentFilter();
-        filter.addAction("SEND");
+        filter.addAction("RECEIVE");
         MainActivity.this.registerReceiver(this.rec, filter);
         
+        //SocketServiceãNìÆ
+		Intent intent = new Intent(this, SocketService.class);
+		startService(intent);
+
     }
 
 

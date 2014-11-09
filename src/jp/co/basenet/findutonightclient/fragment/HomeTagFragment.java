@@ -1,7 +1,9 @@
 package jp.co.basenet.findutonightclient.fragment;
 
 import jp.co.basenet.findutonightclient.R;
+import jp.co.basenet.findutonightclient.Service.SocketService;
 import jp.co.basenet.findutonightclient.activity.KeySelectActivity;
+import jp.co.basenet.findutonightclient.activity.MainActivity;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -24,10 +26,10 @@ public class HomeTagFragment extends Fragment {
 		super.onStart();
 		
 		//Activityから当該Fragment上のButtonを取得
-		Button btnGo = (Button)getActivity().findViewById(R.id.btnKeySelect);
+		Button btnKeySelect = (Button)getActivity().findViewById(R.id.btnKeySelect);
 		
 		//clicklistenerを設定(イベント監視)
-		btnGo.setOnClickListener(new View.OnClickListener() {
+		btnKeySelect.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				//このボタンを押したらkeySelectActivityに移動する
@@ -39,6 +41,19 @@ public class HomeTagFragment extends Fragment {
 		});
 		
 		//現在地周辺
+		//テスト用ボタン
 		//TODO
+		Button btnMapSelect = (Button)getActivity().findViewById(R.id.btnMapSelect);
+		btnMapSelect.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getActivity(), SocketService.class);
+				intent.setAction("SEND");
+				intent.putExtra("msg", "test message");
+				getActivity().startService(intent);
+			}
+		});
 	}
 }
