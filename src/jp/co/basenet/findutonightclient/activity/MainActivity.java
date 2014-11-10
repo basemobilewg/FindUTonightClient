@@ -43,23 +43,23 @@ public class MainActivity extends Activity {
         actionBar.addTab(actionBar.newTab()
         		.setText("Home")
         		.setTabListener(new TabListener<HomeTagFragment>(this,
-        					"home", HomeTagFragment.class)));
+        					"home", HomeTagFragment.class, 1)));
         
         actionBar.addTab(actionBar.newTab()
         		.setText("Chat")
         		.setTabListener(new TabListener<ChatTagFragment>(this,
-        					"chat", ChatTagFragment.class)));
+        					"chat", ChatTagFragment.class, 2)));
         
         actionBar.addTab(actionBar.newTab()
         		.setText("His")
         		.setTabListener(new TabListener<HistoryTagFragment>(this,
-        					"his", HistoryTagFragment.class)));
+        					"his", HistoryTagFragment.class, 3)));
         
         
         actionBar.addTab(actionBar.newTab()
         		.setText("Set")
         		.setTabListener(new TabListener<SettingTagFragment>(this,
-        					"set", SettingTagFragment.class)));
+        					"set", SettingTagFragment.class, 4)));
         
         //ServiceÇÇ±Ç±Ç≈ê›íË(socketí êMóp)
         this.rec = new BroadcastReceiver(){
