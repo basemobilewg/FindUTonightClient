@@ -14,8 +14,6 @@ public class SocketService extends Service {
 	private static final String ADDRESS = "192.168.1.49"; 
 	private static final int PORT = 50001; 
 	
-	int i = 0;
-	
 	private String msg = null;
 	
 	//クライアントソケットチャンネル
@@ -44,7 +42,6 @@ public class SocketService extends Service {
 	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		i++;
 		if("SEND".equals(intent.getAction())) {
 			this.msg = intent.getStringExtra("msg");
 			this.sendBroadcastToActivity();
@@ -59,7 +56,7 @@ public class SocketService extends Service {
 	
 	public void sendBroadcastToActivity() {
 		Intent it = new Intent("RECEIVE");
-		it.putExtra("back", this.msg + "from service" + i);
+		it.putExtra("back", "検索条件" + this.msg);
 		super.sendBroadcast(it);
 	}
 	

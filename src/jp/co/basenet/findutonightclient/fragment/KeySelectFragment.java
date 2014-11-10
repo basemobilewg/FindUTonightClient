@@ -1,23 +1,23 @@
 package jp.co.basenet.findutonightclient.fragment;
 
 import jp.co.basenet.findutonightclient.R;
-import jp.co.basenet.findutonightclient.activity.MainActivity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class KeySelectFragment extends Fragment {
 	
 	@Override
-	public void onStart() {
-		super.onStart();
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
 		//trueを設定した場合、FragmentでもActionBarの内容が変更できる
 		setHasOptionsMenu(true);
 		
@@ -26,6 +26,11 @@ public class KeySelectFragment extends Fragment {
         
         //ActionBarのタイトルを変更
         actionBar.setTitle("条件検索");
+	}
+	
+	@Override
+	public void onStart() {
+		super.onStart();
 		
         //Activityから当該Fragment上のButtonを取得
 		Button btnSelect = (Button)getActivity().findViewById(R.id.btnSelect);
@@ -38,6 +43,11 @@ public class KeySelectFragment extends Fragment {
 				
 				//KeySelectResltFragmentのインスタンスを生成
 				Fragment keySelectResultFragment = Fragment.instantiate(getActivity(), KeySelectResultFragment.class.getName());
+				
+				//検索条件を引数として渡す
+				Bundle bundle = new Bundle();
+                bundle.putString("key", ((EditText)getActivity().findViewById(R.id.inputKey)).getText().toString());  
+                keySelectResultFragment.setArguments(bundle); 
 				
 				//setCustomAnimations Fragment切り替えの時のアニメーションの設定
 				//replace Fragment切り替え
@@ -61,8 +71,8 @@ public class KeySelectFragment extends Fragment {
         switch (item.getItemId()) {
         case android.R.id.home:
         	//戻るボタンを押したらMainActivityに戻る
-        	startActivity(new Intent(getActivity(), MainActivity.class));
-        	
+        	//startActivity(new Intent(getActivity(), MainActivity.class));
+        	getActivity().finish();
         	//アニメーションを設定
         	getActivity().overridePendingTransition(R.anim.activity_in_from_left, R.anim.activity_out_to_right);
             return true;

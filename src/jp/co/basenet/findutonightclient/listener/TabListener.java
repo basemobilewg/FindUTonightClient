@@ -30,7 +30,6 @@ public class TabListener<T extends Fragment> implements ActionBar.TabListener {
 
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		// fragment‚ğì¬‚µ‚Ä‚È‚¢ê‡ì¬A‚·‚Å‚É‘¶İ‚µ‚Ä‚éê‡ó‘Ôhide¨show
 		int object_in_from;
 		int object_out_to;
 		
@@ -51,14 +50,16 @@ public class TabListener<T extends Fragment> implements ActionBar.TabListener {
 		}
 		
 		if(fragment == null) {
+			// fragment‚ğì¬‚µ‚Ä‚È‚¢ê‡ì¬A‚·‚Å‚É‘¶İ‚µ‚Ä‚éê‡ó‘Ôhide¨show
 			fragment = Fragment.instantiate(activity, clz.getName());
-			if(tabNum == 0) {
+			if(preTabNum == 0) {
 				fm.beginTransaction().add(R.id.frame_home, fragment, tag).commit();
 			} else {
 				fm.beginTransaction().setCustomAnimations(object_in_from, object_out_to).add(R.id.frame_home, fragment, tag).commit();
 			}
 		} else {
 			if(fragment.isHidden()) {
+				//fragmentó‘Ô‚ğshow¨hide
 				fm.beginTransaction().setCustomAnimations(object_in_from, object_out_to).show(fragment).commit();
 			}
 		}
@@ -66,7 +67,6 @@ public class TabListener<T extends Fragment> implements ActionBar.TabListener {
 
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-		//fragmentó‘Ô‚ğshow¨hide
 		if(fragment != null) {
 			//FragmentManager fm = activity.getFragmentManager();
 			//fm.beginTransaction().setCustomAnimations(R.animator.object_in_from_right, R.animator.object_out_to_left).hide(fragment).commit();

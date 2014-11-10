@@ -11,7 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class KeySelectActivity extends Activity {
-
+		
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,7 @@ public class KeySelectActivity extends Activity {
         Fragment fragment = Fragment.instantiate(this, KeySelectFragment.class.getName());
         FragmentManager fm = getFragmentManager();
         fm.beginTransaction().add(R.id.frame_find, fragment).commit();
+        
 	}
 	
 	@Override
@@ -41,4 +42,6 @@ public class KeySelectActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         return super.onOptionsItemSelected(item);
     }
+    
+
 }

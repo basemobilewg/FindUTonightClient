@@ -6,6 +6,7 @@
     tools:context="jp.co.basenet.findutonightclient.fragment.KeySelectResultFragement" >
     
     <TextView
+        android:id="@+id/txtResult"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="This is Key Select Result fragment." />

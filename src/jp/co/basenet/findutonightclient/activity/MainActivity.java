@@ -17,9 +17,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -62,13 +59,7 @@ public class MainActivity extends Activity {
         					"set", SettingTagFragment.class, 4)));
         
         //ServiceÇÇ±Ç±Ç≈ê›íË(socketí êMóp)
-        this.rec = new BroadcastReceiver(){
-			@Override
-			public void onReceive(Context context, Intent intent) {
-				// TODO Auto-generated method stub
-				Toast.makeText(MainActivity.this, intent.getStringExtra("back"), Toast.LENGTH_SHORT).show();
-			}
-        };
+        this.rec = new SocketInfoReceiver();
         
         IntentFilter filter = new IntentFilter();
         filter.addAction("RECEIVE");
@@ -94,5 +85,12 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return super.onOptionsItemSelected(item);
+    }
+    
+    private class SocketInfoReceiver extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+
+		}
     }
 }
