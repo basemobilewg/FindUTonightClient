@@ -1,12 +1,12 @@
 package jp.co.basenet.findutonightclient.activity;
 
 import jp.co.basenet.findutonightclient.R;
-import jp.co.basenet.findutonightclient.Service.SocketService;
 import jp.co.basenet.findutonightclient.fragment.ChatTagFragment;
 import jp.co.basenet.findutonightclient.fragment.HistoryTagFragment;
 import jp.co.basenet.findutonightclient.fragment.HomeTagFragment;
 import jp.co.basenet.findutonightclient.fragment.SettingTagFragment;
 import jp.co.basenet.findutonightclient.listener.TabListener;
+import jp.co.basenet.findutonightclient.service.SocketService;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -61,9 +61,9 @@ public class MainActivity extends Activity {
         //ServiceÇÇ±Ç±Ç≈ê›íË(socketí êMóp)
         this.rec = new SocketInfoReceiver();
         
-        IntentFilter filter = new IntentFilter();
-        filter.addAction("RECEIVE");
-        MainActivity.this.registerReceiver(this.rec, filter);
+        //IntentFilter filter = new IntentFilter();
+        //filter.addAction("RECEIVE");
+        //MainActivity.this.registerReceiver(this.rec, filter);
         
         //SocketServiceãNìÆ
 		Intent intent = new Intent(this, SocketService.class);

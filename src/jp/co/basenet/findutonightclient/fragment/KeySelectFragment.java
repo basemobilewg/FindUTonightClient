@@ -46,7 +46,7 @@ public class KeySelectFragment extends Fragment {
 				
 				//検索条件を引数として渡す
 				Bundle bundle = new Bundle();
-                bundle.putString("key", ((EditText)getActivity().findViewById(R.id.inputKey)).getText().toString());  
+                bundle.putString("KEY", ((EditText)getActivity().findViewById(R.id.inputKey)).getText().toString());  
                 keySelectResultFragment.setArguments(bundle); 
 				
 				//setCustomAnimations Fragment切り替えの時のアニメーションの設定

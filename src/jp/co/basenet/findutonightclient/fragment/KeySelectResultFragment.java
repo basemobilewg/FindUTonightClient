@@ -1,7 +1,9 @@
 package jp.co.basenet.findutonightclient.fragment;
 
+import common.Const;
+
 import jp.co.basenet.findutonightclient.R;
-import jp.co.basenet.findutonightclient.Service.SocketService;
+import jp.co.basenet.findutonightclient.service.SocketService;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -38,19 +40,21 @@ public class KeySelectResultFragment extends Fragment {
 			public void onReceive(Context context, Intent intent) {
 				// TODO Auto-generated method stub
 				TextView txtResult = (TextView)getActivity().findViewById(R.id.txtResult);
-				txtResult.setText(intent.getStringExtra("back"));
+				txtResult.setText(intent.getStringExtra("BODY"));
 			}
         };
-        //RECEIVE‚Ì‚İ‚ğˆ—
+        
+        //KEY_SELECT_REC‚Ì‚İ‚ğˆ—
         IntentFilter filter = new IntentFilter();
-        filter.addAction("RECEIVE");
+        filter.addAction(Const.ORDER.KEY_SELECT_REC);
         getActivity().registerReceiver(this.rec, filter);
         
+        //‘O‚Ì‰æ–Ê‚©‚ç‚à‚ç‚Á‚½ŒŸõKEY‚ğSocketService‚É“n‚·
 		Intent intent = new Intent(getActivity(), SocketService.class);
-		intent.setAction("SEND");
-		intent.putExtra("msg", getArguments().getString("key"));
+		intent.setAction(Const.ORDER.KEY_SELECT_SED);
+		intent.putExtra("BODY", getArguments().getString("KEY"));
 		getActivity().startService(intent);
-	}
+	} 
 	
 	@Override
 	public void onStart() {
