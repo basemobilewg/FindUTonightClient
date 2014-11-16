@@ -6,7 +6,8 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 
-import common.Const;
+import jp.co.basenet.findutonightclient.common.Const;
+
 
 import android.app.Service;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package common;
+package jp.co.basenet.findutonightclient.common;
 
 public final class Const {
 	

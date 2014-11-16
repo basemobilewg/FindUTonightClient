@@ -1,8 +1,8 @@
 package jp.co.basenet.findutonightclient.fragment;
 
-import common.Const;
 
 import jp.co.basenet.findutonightclient.R;
+import jp.co.basenet.findutonightclient.common.Const;
 import jp.co.basenet.findutonightclient.service.SocketService;
 import android.app.ActionBar;
 import android.app.Fragment;
