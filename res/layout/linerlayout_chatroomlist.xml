@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    
+	 <ImageView  
+		 android:id="@+id/imgIcon"  
+		 android:layout_width="wrap_content"  
+		 android:layout_height="wrap_content"  
+		 android:paddingBottom="5sp"
+		 android:src="@drawable/ic_launcher" />  
+
+     <LinearLayout  
+	     android:layout_width="match_parent"  
+	     android:layout_height="wrap_content"  
+	     android:paddingBottom="5sp"
+	     android:paddingLeft="5sp"
+	     android:paddingRight="5sp"
+	     android:orientation="vertical" >  
+     
+        <LinearLayout  
+	        android:layout_width="match_parent"  
+	        android:layout_height="wrap_content"  
+	        android:orientation="horizontal" >  
+        
+	        <TextView  
+				android:id="@+id/txtRoomId"  
+				android:layout_width="0dp"  
+				android:layout_height="wrap_content"  
+				android:layout_weight="0.0"
+				android:visibility="gone"
+				android:text="roomId"  
+			/>  
+			
+	        <TextView  
+				android:id="@+id/txtName"  
+				android:layout_width="0dp"  
+				android:layout_height="wrap_content"  
+				android:layout_weight="0.8"
+				android:text="名前(お店の名前)"  
+			/>
+		
+	            　    <TextView  
+				android:id="@+id/txtDate"  
+				android:layout_width="0dp"  
+				android:layout_height="wrap_content"  
+				android:layout_weight="0.2"
+				android:gravity = "right"
+				android:textColor="#999999"
+				android:text="10:55"  
+		    />  
+            
+        </LinearLayout>		
+	    <TextView  
+			android:id="@+id/txtlastMessage"  
+			android:layout_width="match_parent"  
+			android:layout_height="wrap_content"  
+			android:text="最後のチャット内容ああああああああああああああああ"  
+			android:textSize="12sp"
+			android:textColor="#999999"
+		/>  
+     </LinearLayout>
+ 
+</LinearLayout>

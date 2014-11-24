@@ -5,9 +5,12 @@
     android:layout_height="match_parent"
     tools:context="jp.co.basenet.findutonightclient.fragment.ChatTagFragment" >
     
-    <TextView
+    <ListView
+        android:id="@+id/chatroomlist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is Chat fragment." />
-
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:cacheColorHint="#00000000"
+        >
+    </ListView>
 </LinearLayout>
