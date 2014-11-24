@@ -30,8 +30,6 @@ public class MainActivity extends Activity {
         
         //ActionBar取得
         final ActionBar actionBar = getActionBar();
-        //ActionBarのタイトルを変更
-        actionBar.setTitle("お店を探す");
         
         //ActionBarをナビゲーションモードに設定
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -40,23 +38,23 @@ public class MainActivity extends Activity {
         actionBar.addTab(actionBar.newTab()
         		.setText("Home")
         		.setTabListener(new TabListener<HomeTagFragment>(this,
-        					"home", HomeTagFragment.class, 1)));
+        					"home", HomeTagFragment.class, 1, "お店を探す")));
         
         actionBar.addTab(actionBar.newTab()
         		.setText("Chat")
         		.setTabListener(new TabListener<ChatTagFragment>(this,
-        					"chat", ChatTagFragment.class, 2)));
+        					"chat", ChatTagFragment.class, 2, "チャット")));
         
         actionBar.addTab(actionBar.newTab()
         		.setText("His")
         		.setTabListener(new TabListener<HistoryTagFragment>(this,
-        					"his", HistoryTagFragment.class, 3)));
+        					"his", HistoryTagFragment.class, 3,"履歴")));
         
         
         actionBar.addTab(actionBar.newTab()
         		.setText("Set")
         		.setTabListener(new TabListener<SettingTagFragment>(this,
-        					"set", SettingTagFragment.class, 4)));
+        					"set", SettingTagFragment.class, 4,"設定")));
         
         //Serviceをここで設定(socket通信用)
         this.rec = new SocketInfoReceiver();

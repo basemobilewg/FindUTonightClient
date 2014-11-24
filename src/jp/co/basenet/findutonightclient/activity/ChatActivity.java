@@ -1,6 +1,7 @@
 package jp.co.basenet.findutonightclient.activity;
 
 import jp.co.basenet.findutonightclient.R;
+import jp.co.basenet.findutonightclient.fragment.ChatRoomFragment;
 import jp.co.basenet.findutonightclient.fragment.KeySelectFragment;
 import android.app.ActionBar;
 import android.app.Activity;
@@ -10,22 +11,20 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class KeySelectActivity extends Activity {
-		
+public class ChatActivity extends Activity {
+	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_key_select);
+        setContentView(R.layout.activity_chat);
         
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        //actionBar.setTitle(title)
         
         //ç≈èâÇÃFragmentÇçÏê¨
-        Fragment fragment = Fragment.instantiate(this, KeySelectFragment.class.getName());
+        Fragment fragment = Fragment.instantiate(this, ChatRoomFragment.class.getName());
         FragmentManager fm = getFragmentManager();
-        fm.beginTransaction().add(R.id.frame_find, fragment).commit();
-        
+        fm.beginTransaction().add(R.id.frame_chat, fragment).commit();
 	}
 	
 	@Override

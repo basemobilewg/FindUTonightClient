@@ -37,30 +37,34 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int btnKeySelect=0x7f0a0003;
-        public static final int btnMapSelect=0x7f0a0004;
-        public static final int btnSelect=0x7f0a0006;
-        public static final int chatroomlist=0x7f0a0002;
-        public static final int frame_find=0x7f0a0000;
-        public static final int frame_home=0x7f0a0001;
-        public static final int imgIcon=0x7f0a0008;
-        public static final int inputKey=0x7f0a0005;
-        public static final int txtDate=0x7f0a000b;
-        public static final int txtName=0x7f0a000a;
-        public static final int txtResult=0x7f0a0007;
-        public static final int txtRoomId=0x7f0a0009;
-        public static final int txtlastMessage=0x7f0a000c;
+        public static final int btnKeySelect=0x7f0a0005;
+        public static final int btnMapSelect=0x7f0a0006;
+        public static final int btnSelect=0x7f0a0008;
+        public static final int chatroomlist=0x7f0a0004;
+        public static final int frame_chat=0x7f0a0000;
+        public static final int frame_find=0x7f0a0001;
+        public static final int frame_home=0x7f0a0002;
+        public static final int imgIcon=0x7f0a000a;
+        public static final int inputKey=0x7f0a0007;
+        public static final int txtDate=0x7f0a000d;
+        public static final int txtName=0x7f0a000c;
+        public static final int txtResult=0x7f0a0009;
+        public static final int txtResult1=0x7f0a0003;
+        public static final int txtRoomId=0x7f0a000b;
+        public static final int txtlastMessage=0x7f0a000e;
     }
     public static final class layout {
-        public static final int activity_key_select=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int fragment_chat_tag=0x7f030002;
-        public static final int fragment_history_tag=0x7f030003;
-        public static final int fragment_home_tag=0x7f030004;
-        public static final int fragment_key_select=0x7f030005;
-        public static final int fragment_key_select_result=0x7f030006;
-        public static final int fragment_setting_tag=0x7f030007;
-        public static final int linerlayout_chatroomlist=0x7f030008;
+        public static final int activity_chat=0x7f030000;
+        public static final int activity_key_select=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int fragment_chat_room=0x7f030003;
+        public static final int fragment_chat_tag=0x7f030004;
+        public static final int fragment_history_tag=0x7f030005;
+        public static final int fragment_home_tag=0x7f030006;
+        public static final int fragment_key_select=0x7f030007;
+        public static final int fragment_key_select_result=0x7f030008;
+        public static final int fragment_setting_tag=0x7f030009;
+        public static final int linerlayout_chatroomlist=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f090000;

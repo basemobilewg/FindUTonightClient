@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.KeySelectActivity"></activity>
+        <activity android:name=".activity.ChatActivity"></activity>
         <service android:name=".service.SocketService"> </service>
     </application>
 

@@ -15,23 +15,27 @@ public class TabListener<T extends Fragment> implements ActionBar.TabListener {
 	private final String tag;
 	private final Class<T> clz;
 	private final int tabNum;
+	private final String title;
 	
 	private static int preTabNum = 0;
 	private static Fragment preFragment = null;
 
 	
-	public TabListener(Activity activity, String tag, Class<T> clz, int tabNum) {
+	public TabListener(Activity activity, String tag, Class<T> clz, int tabNum, String title) {
 		this.activity = activity;
 		this.tag = tag;
 		this.clz = clz;
 		this.tabNum = tabNum;
 		this.fragment = activity.getFragmentManager().findFragmentByTag(tag);
+		this.title = title;
 	}
 
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 		int object_in_from;
 		int object_out_to;
+		
+		activity.getActionBar().setTitle(title);
 		
 		if(preTabNum < tabNum) {
 			//当該タブの右タブを押した場合
