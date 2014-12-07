@@ -84,8 +84,8 @@ public class SocketService extends Service {
 	private void forwardMessage(int order, int size, byte[] body) throws Exception {
 		Intent it;
 		switch(String.valueOf(order)) {
-			case Const.ORDER.KEY_SELECT_REC:
-				it = new Intent(Const.ORDER.KEY_SELECT_REC);
+			case Const.SOCKET_ORDER.KEY_SELECT_REC:
+				it = new Intent(Const.SOCKET_ORDER.KEY_SELECT_REC);
 				it.putExtra("BODY", new String(body, "UTF-8"));
 				super.sendBroadcast(it);
 				break;

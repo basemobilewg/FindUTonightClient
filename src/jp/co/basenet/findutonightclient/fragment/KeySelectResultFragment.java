@@ -46,12 +46,12 @@ public class KeySelectResultFragment extends Fragment {
         
         //KEY_SELECT_REC‚Ì‚İ‚ğˆ—
         IntentFilter filter = new IntentFilter();
-        filter.addAction(Const.ORDER.KEY_SELECT_REC);
+        filter.addAction(Const.SOCKET_ORDER.KEY_SELECT_REC);
         getActivity().registerReceiver(this.rec, filter);
         
         //‘O‚Ì‰æ–Ê‚©‚ç‚à‚ç‚Á‚½ŒŸõKEY‚ğSocketService‚É“n‚·
 		Intent intent = new Intent(getActivity(), SocketService.class);
-		intent.setAction(Const.ORDER.KEY_SELECT_SED);
+		intent.setAction(Const.SOCKET_ORDER.KEY_SELECT_SED);
 		intent.putExtra("BODY", getArguments().getString("KEY"));
 		getActivity().startService(intent);
 	} 

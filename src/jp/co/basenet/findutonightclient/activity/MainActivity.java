@@ -6,6 +6,7 @@ import jp.co.basenet.findutonightclient.fragment.HistoryTagFragment;
 import jp.co.basenet.findutonightclient.fragment.HomeTagFragment;
 import jp.co.basenet.findutonightclient.fragment.SettingTagFragment;
 import jp.co.basenet.findutonightclient.listener.TabListener;
+import jp.co.basenet.findutonightclient.service.DBService;
 import jp.co.basenet.findutonightclient.service.SocketService;
 
 import android.app.ActionBar;
@@ -66,9 +67,10 @@ public class MainActivity extends Activity {
         //SocketService‹N“®
 		Intent intent = new Intent(this, SocketService.class);
 		startService(intent);
-
+		//DBService‹N“®
+		intent = new Intent(this, DBService.class);
+		startService(intent);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

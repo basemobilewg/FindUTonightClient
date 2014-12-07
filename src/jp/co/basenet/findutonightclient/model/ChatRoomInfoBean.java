@@ -1,13 +1,17 @@
 package jp.co.basenet.findutonightclient.model;
 
-public class ChatRoomInfo {
+import java.io.Serializable;
+
+public class ChatRoomInfoBean implements Serializable {
+	private static final long serialVersionUID = -3651828634659505460L;
+
 	int roomId;
 	String partenerName;
 	String shopName;
 	String lastChatMessage;
 	String lastChatDate;
 	
-	public ChatRoomInfo(int roomId, String partenerName, String shopName, String lastChatMessage, String lastChatDate) {
+	public ChatRoomInfoBean(int roomId, String partenerName, String shopName, String lastChatMessage, String lastChatDate) {
 		this.roomId = roomId;
 		this.partenerName = partenerName;
 		this.shopName = shopName;

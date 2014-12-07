@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import jp.co.basenet.findutonightclient.R;
 import jp.co.basenet.findutonightclient.activity.MainActivity;
-import jp.co.basenet.findutonightclient.model.ChatRoomInfo;
+import jp.co.basenet.findutonightclient.model.ChatRoomInfoBean;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,10 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ChatRoomListAdapter extends BaseAdapter {
-	private ArrayList<ChatRoomInfo> chatRoomList;
+	private ArrayList<ChatRoomInfoBean> chatRoomList;
 	private Context context;
 	
-	public ChatRoomListAdapter(Context context, ArrayList<ChatRoomInfo> chatRoomList) {
+	public ChatRoomListAdapter(Context context, ArrayList<ChatRoomInfoBean> chatRoomList) {
 		this.chatRoomList = chatRoomList;
 		this.context = context;
 	}
